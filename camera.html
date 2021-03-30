@@ -37,10 +37,9 @@
 
 		const redirectCookieValue = document.cookie.split('; ').find(row => row.startsWith('redirect=')).split('=')[1];
 	
-		if (redirectCookieValue == 'true'):
+		if (redirectCookieValue == 'true') {
 			document.getElementById("redirect").innerHTML = "Cookie says redirect";
-
-	
+		}
 	
 		if (window.matchMedia('(display-mode: standalone)').matches) {  
 			document.getElementById("message1").innerHTML = "Started in Standalone Mode";
