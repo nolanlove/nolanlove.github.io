@@ -13,17 +13,14 @@
 	
 	Message1:<div id="message1">No message</div>
 	Message2:<div id="message2">No message</div>
-	Redirect:<div id="redirect">No message</div>
-	Cookies:<div id="cookies">No message</div>
-	
-	
-	
-	
+	Redirect:<div id="redirect">No redirect</div>
+	Cookies:<div id="cookies">No cookies</div>
+	Query String:<div id="query_string">No query string</div>
+		
 	<button onclick="alertCookie()">Show cookies</button>
 	<button onclick="document.cookie='redirect=true'">Set cookie</button>
 	<button onclick="document.cookie='redirect=; expires=Thu, 01 Jan 1970 00:00:00 GMT'">Clear cookie</button>
 
-		
 	
 	<script type="text/javascript">
 	
@@ -33,6 +30,7 @@
 		}
 
 		document.getElementById("cookies").innerHTML = document.cookie;
+		document.getElementById("query_string").innerHTML = window.location.search;
 
 
 		const redirectCookieValue = document.cookie.split('; ').find(row => row.startsWith('redirect=')).split('=')[1];
