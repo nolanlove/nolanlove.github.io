@@ -11,22 +11,30 @@
 	<h1>Camera Link</h1><br/>
 	<a href="http://nolanlove.github.io/index.html"><h2>CAMERA REDIRECT PAGE</h2></a>
 	
+	<div id="message">No message</div>
+	
 	
 	<script type="text/javascript">
 	
 	
 		if (window.matchMedia('(display-mode: standalone)').matches) {  
-			alert('Started in Standalone Mode');   
+			alert('Started in Standalone Mode');
+			document.getElementById("message").innerHTML = "Started in Standalone Mode";
+
 		}  
 	
 	
 	
 		if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
 			alert('Started from Home Screen');
+			document.getElementById("message").innerHTML = "Started from Home Screen";
+
 		}
 		else
 		{
 			alert('Started from Web Browser');
+			document.getElementById("message").innerHTML = "Started from Web Browser";
+
 		}
 	</script>
 	
