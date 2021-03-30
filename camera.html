@@ -1,8 +1,19 @@
 <html>
-	<script>
+	<script type="text/javascript">	
+		function setCookie() {
+			document.cookie="redirect=true"
+		}
+	
+		function clearCookie() {
+			document.cookie="redirect=; expires=Thu, 01 Jan 1970 00:00:00 GMT"
+		}
+
+		if (window.location.search != '') {
+			clearCookie();
+		}
+	
 	    if (document.cookie.indexOf("redirect") != -1) {
-        	let a = "instagram://story-camera";
-        	alert("redirect");
+        	window.location = "instagram://story-camera";
     	}
 	</script>
 
@@ -25,18 +36,6 @@
 	<button onclick="clearCookie()">Clear cookie</button>
 	
 	<script type="text/javascript">
-	
-		function setCookie() {
-			document.cookie="redirect=true"
-		}
-	
-		function clearCookie() {
-			document.cookie="redirect=; expires=Thu, 01 Jan 1970 00:00:00 GMT"
-		}
-
-		if (window.location.search != '') {
-			clearCookie();
-		}
 
 		document.getElementById("cookies").innerHTML = document.cookie;
 		document.getElementById("query_string").innerHTML = window.location.search;
