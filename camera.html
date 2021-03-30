@@ -2,10 +2,14 @@
 	<script type="text/javascript">	
 		function setCookie() {
 			document.cookie="redirect=true"
+			window.location.reload(false); 
 		}
 	
 		function clearCookie() {
-			document.cookie="redirect=; expires=Thu, 01 Jan 1970 00:00:00 GMT"
+			if (document.cookie.indexOf("redirect") != -1) {
+				document.cookie="redirect=; expires=Thu, 01 Jan 1970 00:00:00 GMT"
+				window.location.reload(false);
+			}
 		}
 
 		if (window.location.search != '') {
