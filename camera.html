@@ -44,9 +44,8 @@
 		document.getElementById("cookies").innerHTML = document.cookie;
 		document.getElementById("query_string").innerHTML = window.location.search;
 
-		const redirectCookieValue = document.cookie.split('; ').find(row => row.startsWith('redirect=')).split('=')[1];
 	
-		if (redirectCookieValue == 'true') {
+		if (document.cookie.indexOf("redirect") != -1) {
 			document.getElementById("redirect").innerHTML = "Cookie says redirect";
 		}
 	
