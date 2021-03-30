@@ -19,7 +19,6 @@
 	
 	
 		if (window.matchMedia('(display-mode: standalone)').matches) {  
-			alert('Started in Standalone Mode');
 			document.getElementById("message1").innerHTML = "Started in Standalone Mode";
 
 		}  
@@ -27,13 +26,11 @@
 	
 	
 		if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
-			alert('Started from Home Screen');
 			document.getElementById("message2").innerHTML = "Started from Home Screen";
 
 		}
 		else
 		{
-			alert('Started from Web Browser');
 			document.getElementById("message2").innerHTML = "Started from Web Browser";
 
 		}
