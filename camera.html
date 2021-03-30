@@ -6,8 +6,6 @@
 	<link rel="apple-touch-startup-image" href="/startup.png">
 	<!-- sets startup image to look like a native app -->
 
-
-
 	<h1>Camera Link</h1><br/>
 	<a href="http://nolanlove.github.io/index.html"><h2>CAMERA REDIRECT PAGE</h2></a>
 	
@@ -17,21 +15,20 @@
 	Cookies:<div id="cookies">No cookies</div>
 	Query String:<div id="query_string">No query string</div>
 		
-	<button onclick="alertCookie()">Show cookies</button>
-	<button onclick="document.cookie='redirect=true'">Set cookie</button>
-	<button onclick="document.cookie='redirect=; expires=Thu, 01 Jan 1970 00:00:00 GMT'">Clear cookie</button>
-
+	<button onclick="setCookie()">Set cookie</button>
+	<button onclick="clearCookie()">Clear cookie</button>
 	
 	<script type="text/javascript">
+		function setCookie() {
+			document.cookie="redirect=true"
+		}
 	
-	
-		function alertCookie() {
-			alert(document.cookie);
+		function clearCookie() {
+			document.cookie="redirect=; expires=Thu, 01 Jan 1970 00:00:00 GMT"
 		}
 
 		document.getElementById("cookies").innerHTML = document.cookie;
 		document.getElementById("query_string").innerHTML = window.location.search;
-
 
 		const redirectCookieValue = document.cookie.split('; ').find(row => row.startsWith('redirect=')).split('=')[1];
 	
@@ -43,8 +40,6 @@
 			document.getElementById("message1").innerHTML = "Started in Standalone Mode";
 
 		}  
-	
-	
 	
 		if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
 			document.getElementById("message2").innerHTML = "Started from Home Screen";
