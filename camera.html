@@ -32,14 +32,12 @@
 			alert(document.cookie);
 		}
 
+		document.getElementById("cookies").innerHTML = document.cookie;
+
 
 		const redirectCookieValue = document.cookie.split('; ').find(row => row.startsWith('redirect=')).split('=')[1];
 	
-	
-	
-		document.getElementById("cookies").innerHTML = document.cookie;
-	
-		if redirectCookieValue == 'true':
+		if (redirectCookieValue == 'true'):
 			document.getElementById("redirect").innerHTML = "Cookie says redirect";
 
 	
