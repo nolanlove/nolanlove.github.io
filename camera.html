@@ -1,12 +1,25 @@
 <html>
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<!-- presents content in full-screen mode. -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<!-- presents content in full-screen mode. -->
 
-<link rel="apple-touch-startup-image" href="/startup.png">
-<!-- sets startup image to look like a native app -->
+	<link rel="apple-touch-startup-image" href="/startup.png">
+	<!-- sets startup image to look like a native app -->
+
 
 
 	<h1>Camera Link</h1><br/>
 	<a href="http://nolanlove.github.io/index.html"><h2>CAMERA REDIRECT PAGE</h2></a>
+	
+	
+	<script type="text/javascript">
+		if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
+			alert('Started from Home Screen')
+		}
+		else
+		{
+			alert('Started from Web Browser')
+		}
+	</script>
+	
 </html>
